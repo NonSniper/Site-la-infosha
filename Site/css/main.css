@@ -251,7 +251,6 @@ width: 1250px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding-top: 40px;
   margin: 0 auto;
 }
 
@@ -284,6 +283,7 @@ width: 1250px;
   font-size: 70px;
   text-align: center;
   padding-top: 20px;
+  padding-bottom: 20px;
   color: #ffffff;
 }
 
@@ -354,10 +354,12 @@ width: 1250px;
   font-size: 24px;
 }
 
+/*page 2*/
+
 .videos-container {
   display: flex;
+  position: relative;
 /* Равномерное распределение пространства между видео */
-  padding-top: 20px;
 }
 
 .video {
@@ -365,7 +367,7 @@ width: 1250px;
 }
 
 .video2 {
-  width: calc(50% - 10px); /* Ширина каждого видео (50% - 5px для отступов между видео) */
+  width: calc(50% - 30px); /* Ширина каждого видео (50% - 5px для отступов между видео) */
   padding-left: 30px;
 }
 
@@ -384,4 +386,29 @@ width: 1250px;
 
 .IT_img {
   width: 605px;
+}
+
+
+/*Page 5*/
+
+.custom-table {
+  width: 100%; /* Ширина таблицы равна ширине контейнера */
+  border-collapse: collapse; /* Объединение границ ячеек таблицы */
+  color: #fff;
+}
+
+.custom-table td {
+  width: 25%; /* Каждая ячейка занимает 25% ширины контейнера */
+  border: 1px solid #ffffff; /* Границы ячеек */
+  padding: 10px; /* Внутренний отступ ячеек */
+  text-align: center; /* Центрирование текста в ячейках */
+}
+
+.fizmeth {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.bold {
+  font-weight: 700;
 }
