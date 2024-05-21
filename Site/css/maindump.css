@@ -174,6 +174,10 @@ body{
   color: inherit;
 }
 
+
+
+
+
 /*Header content*/
 
 .header__title {
@@ -191,7 +195,6 @@ body{
 
 .products {
   display: flex;
-  max-width: 1250px;
   padding-top: 40px;
   margin: 0 auto;
 }
@@ -239,6 +242,55 @@ body{
 }
 
 
+ /*BUTTTON CEOTCOS*/
+
+
+
+ .button {
+  width: 130px;
+  height: 50px;
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px;
+
+
+
+  border: 2px solid #76b900;
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  text-align: center;
+  transition: .3s;
+  z-index: 1;
+  font-family: inherit;
+  color: #76b900
+ }
+ 
+ .button::before {
+  content: '';
+  width: 0;
+  height: 300%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: #76b900;
+  transition: .5s ease;
+  display: block;
+  z-index: -1;
+ }
+ 
+ .button:hover::before {
+  width: 105%;
+ }
+ 
+ .button:hover {
+  color: #111;
+ }
+ 
+ 
+
 
 
 /* PAGE 3*/
@@ -251,7 +303,6 @@ width: 1250px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding-top: 40px;
   margin: 0 auto;
 }
 
@@ -268,6 +319,7 @@ width: 1250px;
 .teacher-info {
   color: #ffffff;
   padding: 10px;
+  text-align: center;
 }
 
 .teacher-info h3 {
@@ -283,48 +335,162 @@ width: 1250px;
   font-size: 70px;
   text-align: center;
   padding-top: 20px;
+  padding-bottom: 20px;
   color: #ffffff;
 }
 
 .group-photo {
-    display: flex;
-    gap: 20px; /* Отступ между группами */
-    justify-content: space-between;
-  }
+  display: flex;
+  gap: 20px; /* Отступ между группами */
+  justify-content: space-between;
+}
+
+.group-title {
+  color: #fff;
+  text-align: center;
+  padding-bottom: 10px;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.group {
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.photos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Отступ между фотографиями */
+}
+
+.photo {
+  flex-basis: calc(50% - 10px); /* Ширина каждой фотографии */
+  height: 200px; /* Установка фиксированной высоты для родительского контейнера фотографии */
+  overflow: hidden; /* Обрезание изображений, чтобы они не выходили за пределы контейнера */
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 
-  
-  .group-title {
-    color: #fff;
-    text-align: center;
-    padding-bottom: 10px;
-    font-weight: 600;
-    font-size: 32px;
-  }
-  
-  .group {
-    border-radius: 10px;
-    padding: 20px;
-  }
-  
-  .photos {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px; /* Отступ между фотографиями */
-  }
-  
-  .photo {
-    flex-basis: calc(50% - 10px); /* Ширина каждой фотографии */
-    height: 200px; /* Установка фиксированной высоты для родительского контейнера фотографии */
-    overflow: hidden; /* Обрезание изображений, чтобы они не выходили за пределы контейнера */
-  }
-  
-  .photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
 
-  
+/*page 4*/
+
+.video-container {
+  display: flex;
+  padding-top: 20px;
+}
+
+.video {
+  flex: 1;
+}
 
 
+.text {
+  padding-left: 20px; /* Добавляем отступ слева для разделения между видео и текстом */
+  color: #76b900;
+  flex: 1;
+}
+
+.text h2 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 32px;
+}
+
+.text p {
+  font-size: 24px;
+}
+
+/*page 2*/
+
+.videos-container {
+  display: flex;
+  position: relative;
+/* Равномерное распределение пространства между видео */
+}
+
+.video {
+  width: 610px; /* Ширина каждого видео (50% - 5px для отступов между видео) */
+}
+
+.video2 {
+  width: calc(50% - 30px); /* Ширина каждого видео (50% - 5px для отступов между видео) */
+  padding-left: 30px;
+}
+
+.programare {
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 20px;
+}
+
+.IT_text {
+  color: #ffffff;
+  width: 605px;
+  padding-right: 30px;
+}
+
+.IT_img {
+  width: 605px;
+}
+
+
+/*Page 5*/
+
+.custom-table {
+  width: 100%; /* Ширина таблицы равна ширине контейнера */
+  border-collapse: collapse; /* Объединение границ ячеек таблицы */
+  color: #fff;
+}
+
+.custom-table td {
+  width: 25%; /* Каждая ячейка занимает 25% ширины контейнера */
+  border: 1px solid #ffffff; /* Границы ячеек */
+  padding: 10px; /* Внутренний отступ ячеек */
+  text-align: center; /* Центрирование текста в ячейках */
+}
+
+.fizmeth {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+
+
+
+.footer {
+  min-height: 100px;
+  display: flex;
+  margin-top: 40px;
+  border-top: 1px solid #747474;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-text {
+  font-size: 16px;
+  display: flex;
+  list-style: none; /* Убрать маркеры списка */
+  align-items: center;
+}
+
+.footer-text li {
+  display: flex;
+}
+
+.footer-text a {
+  font-weight: 100;
+  color: #76b900;
+  text-decoration: none; /* Убрать подчеркивание ссылок */
+  margin-left: 30px;
+}

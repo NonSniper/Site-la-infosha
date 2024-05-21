@@ -138,6 +138,7 @@ body{
   column-gap: 80px;
   font-size: 15;
   font-weight: 500;
+
 }
 
 .nav__list a {
@@ -148,6 +149,8 @@ body{
 
 .nav__list a:hover::after {
   content: "";
+
+  transition: 3s;
 
   position: absolute;
   left: 0;
@@ -238,7 +241,52 @@ body{
   text-align: center;
 }
 
+ /*BUTTTON CEOTCOS*/
 
+
+
+ .button {
+  width: 130px;
+  height: 50px;
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px;
+
+
+
+  border: 2px solid #76b900;
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  text-align: center;
+  transition: .3s;
+  z-index: 1;
+  color: #76b900
+ }
+ 
+ .button::before {
+  content: '';
+  width: 0;
+  height: 300%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: #76b900;
+  transition: .5s ease;
+  display: block;
+  z-index: -1;
+ }
+ 
+ .button:hover::before {
+  width: 105%;
+ }
+ 
+ .button:hover {
+  color: #111;
+ }
+ 
 
 
 /* PAGE 3*/
@@ -277,6 +325,7 @@ width: 1250px;
 .teacher-info p {
   margin-bottom: 0;
 }
+
 
 .aristotel {
   font-weight: 600;
@@ -331,12 +380,28 @@ width: 1250px;
 .video-container {
   display: flex;
   padding-top: 20px;
+  width: 100%;
 }
 
-.video {
-  flex: 1;
+.left-column {
+  display: flex;
+  flex-direction: column;
+  flex: 1.25;
+  margin-right: 20px; /* Space between the left and right columns */
 }
-
+.right-column {
+  flex: 0.75;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+video {
+  width: 100%;
+  height: auto;
+}
+.vertical-video {
+  height: 100%
+}
 
 .text {
   padding-left: 20px; /* Добавляем отступ слева для разделения между видео и текстом */
@@ -353,6 +418,10 @@ width: 1250px;
 .text p {
   font-size: 24px;
 }
+
+
+
+
 
 /*page 2*/
 
@@ -393,13 +462,18 @@ width: 1250px;
 
 .custom-table {
   width: 100%; /* Ширина таблицы равна ширине контейнера */
-  border-collapse: collapse; /* Объединение границ ячеек таблицы */
-  color: #fff;
+  border-collapse: separate; /* Разделение границ ячеек и таблицы */
+  border-spacing: 1; /* Устранение промежутков между ячейками */
+  color: #76b900;
+  border: 4px solid #0f1f1c; /* Белый контур таблицы */
 }
 
-.custom-table td {
+
+.custom-table td,
+.custom-table th {
+  background-color: #0f1f1c;
   width: 25%; /* Каждая ячейка занимает 25% ширины контейнера */
-  border: 1px solid #ffffff; /* Границы ячеек */
+  border: 2px solid #000000; /* Черные внутренние границы ячеек */
   padding: 10px; /* Внутренний отступ ячеек */
   text-align: center; /* Центрирование текста в ячейках */
 }
@@ -411,4 +485,168 @@ width: 1250px;
 
 .bold {
   font-weight: 700;
+}
+
+
+.footer {
+  min-height: 100px;
+  display: flex;
+  margin-top: 40px;
+  border-top: 1px solid #747474;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-text {
+  font-size: 16px;
+  display: flex;
+  list-style: none; /* Убрать маркеры списка */
+  align-items: center;
+}
+
+.footer-text li {
+  display: flex;
+}
+
+.footer-text a {
+  font-weight: 100;
+  color: #ffffff;
+  text-decoration: none; /* Убрать подчеркивание ссылок */
+  margin-left: 30px;
+  position: relative;
+}
+
+.footer-text a:hover::after {
+  content: "";
+
+
+  position: absolute;
+  left: 0;
+  right: 10px;
+  bottom: -6;
+
+  display: block;
+  height: 4px;
+  background-color: #C4C4C4;
+  border-radius: 50px;
+
+
+} 
+
+
+/*PAGE 6*/
+
+.card {
+  width: calc(33.33% - 20px);
+  height: 393px;
+  margin-bottom: 40px;
+  perspective: 1000px;
+  text-align: center;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.999s;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.card-front {
+  background-color: #000000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  border: 5px solid #ffffff;
+  border-radius: 10px;
+  justify-content: center;
+  font-size: 24px;
+  transform: rotateY(0deg);
+}
+
+.card-back {
+  background-color: #0f1f1c;
+  color: #76b900;
+  display: flex;
+  align-items: center;
+  border: 5px solid #76b900;
+  border-radius: 10px;
+  justify-content: center;
+  font-size: 24px;
+  transform: rotateY(180deg);
+}
+
+
+
+/*Medal card*/
+
+.medals {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.medal-card {
+  width: calc(33.33% - 20px);
+  height: 393px;
+  margin-bottom: 40px;
+  perspective: 1000px;
+  text-align: center;
+}
+
+.medal-card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.999s;
+}
+
+.medal-card:hover .medal-card-inner {
+  transform: rotateY(180deg);
+}
+
+.medal-card-front,
+.medal-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.medal-card-front {
+  background-color: #000000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  border: 5px solid #ffffff;
+  border-radius: 10px;
+  justify-content: center;
+  font-size: 24px;
+  transform: rotateY(0deg);
+}
+
+.medal-card-back {
+  background-color: #0f1f1c;
+  color: #76b900;
+  display: flex;
+  align-items: center;
+  border: 5px solid #76b900;
+  border-radius: 10px;
+  justify-content: center;
+  font-size: 24px;
+  transform: rotateY(180deg);
 }
